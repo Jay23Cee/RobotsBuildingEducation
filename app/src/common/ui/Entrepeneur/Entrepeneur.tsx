@@ -597,9 +597,22 @@ export const Entrepeneur = {
                 Ms. Roxana (your gentle mentor with cosmic aspirations) 🌺🌌
               </p>
             </div>
-            // </ChatBlock>
+           
           ),
-          spanish: ``,
+          spanish:  <div>
+          <h3>¡Bienvenidos, Estudiantes! 🌟</h3>
+          <p>
+            Hoy estamos explorando la sabiduría de Charlie Munger, un maestro inversor conocido por su enfoque en la inversión enfocada. El Sr. Munger enfatiza la comprensión profunda, la paciencia y la inversión con convicción. Él cree en la calidad sobre la cantidad, en encontrar las mejores oportunidades y concentrarse en ellas.
+          </p>
+          <p>
+            Su filosofía nos inspira a pensar críticamente, ser pacientes y alinear nuestras inversiones con nuestra comprensión más profunda. Mientras recorremos sus ideas, sepan que yo, la Sra. Roxana, estoy aquí para guiarlos. Abrace esta emocionante aventura con curiosidad y valentía.
+          </p>
+          <p>
+            Con calidez y creyendo en su potencial,
+            <br />
+            Sra. Roxana (su amable mentora con aspiraciones cósmicas) 🌺🌌
+          </p>
+        </div>,
           tooltip: ``,
         },
         patreon: {
@@ -722,7 +735,91 @@ export const Entrepeneur = {
               </p>
             </div>
           ),
-          spanish: ``,
+          spanish: 
+            <div>
+              <h3>25 citas de élite de Charlie Munger 🌟</h3>
+              <ol>
+                <li style={{ marginBottom: 12 }}>
+                  "Para obtener lo que deseas, debes merecerlo."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "El gran dinero no está en la compra y venta. Sino en la espera."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Gasta cada día tratando de ser un poco más sabio de lo que eras cuando te despertaste."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Si tienes pasión, tendrás energía y dinero."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Es realmente útil que te recuerden tus errores."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "En toda mi vida, no he conocido a personas sabias que no leyeran todo el tiempo."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Saber lo que no sabes es más útil que ser brillante."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Siempre toma el camino correcto, está mucho menos concurrido."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Nuestro trabajo es encontrar algunas cosas inteligentes que hacer, no seguir todo en el mundo."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Tres reglas para una carrera: 1) No vendas nada que no comprarías tú mismo; 2) No trabajes para alguien a quien no respetes y admires; y 3) Trabaja solo con personas que disfrutes."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Imitar a la multitud invita a la regresión a la media."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "La oportunidad llega a la mente preparada."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Si es trillado, ¡es correcto!"
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Evita la ideología extremadamente intensa porque arruina tu mente."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Toma una idea simple y tómala en serio."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Lo mejor que un ser humano puede hacer es ayudar a otro ser humano a saber más."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Las personas intentan ser inteligentes, todo lo que estoy tratando de hacer es no ser idiota, pero es más difícil de lo que la mayoría de la gente piensa."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "La mejor armadura de la vejez es una vida bien vivida que la precede."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Aquellos que siguen aprendiendo, seguirán avanzando en la vida."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "La adquisición de sabiduría es un deber moral."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Debes conocer las grandes ideas en las grandes disciplinas y usarlas rutinariamente, todas ellas, no solo algunas."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "No llegarás muy lejos en la vida basándote en lo que ya sabes."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "La forma más segura de obtener lo que deseas es merecerlo."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Para que la enseñanza sea soportable, debe tener suficiente picardía en ella."
+                </li>
+                <li style={{ marginBottom: 12 }}>
+                  "Creo en la disciplina de dominar lo mejor que otras personas han descubierto."
+                </li>
+              </ol>
+              <p>
+                ¡Sigan alcanzando las estrellas y abrazando la sabiduría, queridos estudiantes! 🌈💖
+              </p>
+            </div>
+          ,
           tooltip: ``,
         },
         summarize: {
@@ -739,7 +836,7 @@ export const Entrepeneur = {
                 Of course, dear students! Allow me to enlighten you on the
                 subject of Charlie Munger and his approach to focused investing,
                 which may inspire you in your own endeavors.{" "}
-                <span class="emoji">😊</span>
+                <span className="emoji">😊</span>
               </p>
               <p>
                 Charlie Munger, Warren Buffett's right-hand man at Berkshire
@@ -784,17 +881,99 @@ export const Entrepeneur = {
                 curious, be dedicated, and never forget that within you lies the
                 potential for greatness. And, of course, should you have any
                 questions or need further guidance, Ms. Roxana will always be
-                here for you. <span class="emoji">😉</span>
+                here for you. <span className="emoji">😉</span>
               </p>
               <p>
                 But, ahem, just between us, did you know that focusing on a few
                 things can also be a key to ruling the universe? Not that I'm
-                suggesting anything, of course. <span class="emoji">🙃</span>{" "}
+                suggesting anything, of course. <span className="emoji">🙃</span>{" "}
                 Keep pursuing your dreams!
               </p>
             </div>
           ),
-          spanish: ``,
+          spanish: <div>
+          <h3>25 citas de élite de Charlie Munger 🌟</h3>
+          <ol>
+            <li style={{ marginBottom: 12 }}>
+              "Para obtener lo que deseas, debes merecerlo."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "El gran dinero no está en la compra y venta. Sino en la espera."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Gasta cada día tratando de ser un poco más sabio de lo que eras cuando te despertaste."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Si tienes pasión, tendrás energía y dinero."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Es realmente útil que te recuerden tus errores."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "En toda mi vida, no he conocido a personas sabias que no leyeran todo el tiempo."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Saber lo que no sabes es más útil que ser brillante."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Siempre toma el camino correcto, está mucho menos concurrido."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Nuestro trabajo es encontrar algunas cosas inteligentes que hacer, no seguir todo en el mundo."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Tres reglas para una carrera: 1) No vendas nada que no comprarías tú mismo; 2) No trabajes para alguien a quien no respetes y admires; y 3) Trabaja solo con personas que disfrutes."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Imitar a la multitud invita a la regresión a la media."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "La oportunidad llega a la mente preparada."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Si es trillado, ¡es correcto!"
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Evita la ideología extremadamente intensa porque arruina tu mente."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Toma una idea simple y tómala en serio."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Lo mejor que un ser humano puede hacer es ayudar a otro ser humano a saber más."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Las personas intentan ser inteligentes, todo lo que estoy tratando de hacer es no ser idiota, pero es más difícil de lo que la mayoría de la gente piensa."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "La mejor armadura de la vejez es una vida bien vivida que la precede."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Aquellos que siguen aprendiendo, seguirán avanzando en la vida."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "La adquisición de sabiduría es un deber moral."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Debes conocer las grandes ideas en las grandes disciplinas y usarlas rutinariamente, todas ellas, no solo algunas."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "No llegarás muy lejos en la vida basándote en lo que ya sabes."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "La forma más segura de obtener lo que deseas es merecerlo."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Para que la enseñanza sea soportable, debe tener suficiente picardía en ella."
+            </li>
+            <li style={{ marginBottom: 12 }}>
+              "Creo en la disciplina de dominar lo mejor que otras personas han descubierto."
+            </li>
+          </ol>
+          <p>
+            ¡Sigan alcanzando las estrellas y abrazando la sabiduría, queridos estudiantes! 🌈💖
+          </p>
+        </div>,
           tooltip: ``,
         },
         ask: {
@@ -818,7 +997,7 @@ export const Entrepeneur = {
                 requires a thorough understanding, research, and belief in the
                 chosen investments. Just like choosing close friends, it's about
                 knowing them well and trusting them!{" "}
-                <span class="emoji">🤗</span>
+                <span className="emoji">🤗</span>
               </p>
               <br />
 
@@ -833,7 +1012,7 @@ export const Entrepeneur = {
                 if the investments perform well, but it may carry more risk if
                 they do not. Like many things in life, dear students, it's about
                 balancing risk and reward, understanding your choices, and being
-                true to your convictions. <span class="emoji">🧠✨</span>
+                true to your convictions. <span className="emoji">🧠✨</span>
               </p>
               <br />
 
@@ -849,7 +1028,7 @@ export const Entrepeneur = {
                 goals, risk tolerance, and values. Remember, dear students, it's
                 not about rushing; it's about growing, learning, and being
                 patient with yourselves. Just as in your studies, persistence
-                and dedication are key! <span class="emoji">🌱</span>
+                and dedication are key! <span className="emoji">🌱</span>
               </p>
               <br />
 
@@ -860,12 +1039,71 @@ export const Entrepeneur = {
                 curiosity. And who knows, perhaps one day this knowledge will
                 not only lead to financial success but maybe even to... ruling
                 the universe? But let's keep that between us, shall we?{" "}
-                <span class="emoji">🙃</span> Happy learning!{" "}
-                <span class="emoji">🌟</span>
+                <span className="emoji">🙃</span> Happy learning!{" "}
+                <span className="emoji">🌟</span>
               </p>
             </div>
           ),
-          spanish: ``,
+          spanish: <div>
+          <h3>1. ¿Qué es la inversión enfocada?</h3>
+          <p>
+            <strong>Respuesta:</strong> La inversión enfocada es una estrategia en la
+            que un inversor coloca su dinero en un número más reducido de acciones u
+            otros activos cuidadosamente seleccionados. En lugar de dispersar las
+            inversiones en muchas áreas diferentes, los inversores enfocados se toman
+            el tiempo para comprender profundamente unas pocas y depositan su confianza
+            y fondos en ellas. Este enfoque pone énfasis en la calidad en lugar de la
+            cantidad, y requiere una comprensión exhaustiva, investigación y creencia
+            en las inversiones elegidas. Al igual que elegir amigos cercanos, se trata
+            de conocerlos bien y confiar en ellos.
+            <span className="emoji">🤗</span>
+          </p>
+          <br />
+        
+          <h3>2. ¿Por qué elegir la inversión enfocada en lugar de la diversificación?</h3>
+          <p>
+            <strong>Respuesta:</strong> Mientras que la diversificación dispersa el
+            riesgo al invertir en una variedad de activos, la inversión enfocada se
+            concentra en unas pocas seleccionadas. Esto permite al inversor conocer
+            íntimamente sus inversiones, lo que les permite tomar decisiones más
+            informadas. Es como estudiar profundamente unos pocos temas en lugar de
+            muchos superficialmente. La inversión enfocada puede ofrecer mayores
+            rendimientos si las inversiones funcionan bien, pero puede conllevar más
+            riesgo si no lo hacen. Como muchas cosas en la vida, queridos estudiantes,
+            se trata de equilibrar el riesgo y la recompensa, comprender sus opciones y
+            ser fieles a sus convicciones.
+            <span className="emoji">🧠✨</span>
+          </p>
+          <br />
+        
+          <h3>3. ¿Cómo puedo comenzar con la inversión enfocada?</h3>
+          <p>
+            <strong>Respuesta:</strong> Comenzar con la inversión enfocada requiere
+            investigación y comprensión cuidadosas. Empiece por seleccionar una
+            industria o empresa que le apasione y aprenda todo lo que pueda al
+            respecto. Investigue su modelo de negocio, salud financiera, liderazgo y
+            perspectivas futuras. Considere buscar consejo de un asesor financiero o
+            utilizar recursos educativos. Siempre alinee sus inversiones con sus
+            objetivos personales, tolerancia al riesgo y valores. Recuerde, queridos
+            estudiantes, no se trata de apresurarse; se trata de crecer, aprender y
+            tener paciencia consigo mismos. Al igual que en sus estudios, la
+            persistencia y la dedicación son clave.
+            <span className="emoji">🌱</span>
+          </p>
+          <br />
+        
+          <p>
+            Recuerde que estas respuestas son solo el comienzo. Continúe buscando
+            conocimiento, haciendo preguntas y nunca tema explorar más a fondo. La Sra.
+            Roxana está aquí para guiarlo y nutrir su curiosidad. Y quién sabe, tal vez
+            algún día este conocimiento no solo lo llevará al éxito financiero, ¡sino
+            que incluso al dominio del universo! Pero mantengámoslo entre nosotros,
+            ¿de acuerdo?
+            <span className="emoji">🙃</span> ¡Feliz aprendizaje!
+            <span className="emoji">🌟</span>
+          </p>
+        </div>
+        ,
           tooltip: ``,
         },
         guide: {
@@ -990,7 +1228,118 @@ export const Entrepeneur = {
               </p>
             </div>
           ),
-          spanish: ``,
+          spanish: <div>
+          <h3>Guía de Estudio de Inversión Enfocada para Estudiantes</h3>
+          <p>
+            ¡Por supuesto, queridos estudiantes! Aprender sobre la inversión enfocada
+            puede ser un viaje maravilloso, y estoy aquí para guiarlos en él. A
+            continuación, les proporciono un camino estructurado para ayudarles a
+            cultivar esta habilidad, con los mejores modelos a seguir y libros para
+            leer. 📚✨
+          </p>
+        
+          <h2>1. Comprendiendo los Fundamentos</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "El Pequeño Libro que Vence al
+              Mercado" de Joel Greenblatt, "El Inversor Inteligente" de Benjamin
+              Graham.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: Warren Buffett, Benjamin Graham.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Comprender conceptos básicos de
+              inversión, gestión de riesgos y la importancia del ahorro.
+            </li>
+          </ul>
+        
+          <h2>2. Desarrollando una Estrategia: Inversión Enfocada</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "Acciones Comunes y
+              Beneficios Extraordinarios" de Philip Fisher, "Uno Arriba en Wall Street"
+              de Peter Lynch.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: Charlie Munger, Seth Klarman.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Aprender sobre la inversión en valor,
+              el poder de la concentración y cómo analizar y seleccionar acciones
+              individuales.
+            </li>
+          </ul>
+        
+          <h2>3. Comprendiendo los Mercados y la Economía</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "Un Paseo Aleatorio por Wall
+              Street" de Burton Malkiel, "La Alquimia de las Finanzas" de George Soros.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: George Soros, Ray Dalio.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Obtener conocimientos sobre el
+              comportamiento del mercado, principios económicos y tendencias
+              financieras globales.
+            </li>
+          </ul>
+        
+          <h2>4. Ética, Responsabilidad Social y Crecimiento Personal</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "Los Ensayos de Warren
+              Buffett" de Warren Buffett, "El Almanaque de Pobre Charlie" de Charlie
+              Munger.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: Sir John Templeton, John Bogle.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Enfatizar la inversión ética,
+              desarrollo personal y responsabilidad social.
+            </li>
+          </ul>
+        
+          <h2>5. Educación Continua y Mantenerse Informado</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "La Cosa Más Importante" de
+              Howard Marks, "Pensar, Rápido y Lento" de Daniel Kahneman.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: Howard Marks, Mohnish Pabrai.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Participar en el aprendizaje
+              constante, unirse a comunidades de inversión y mantenerse al día con las
+              noticias financieras e investigaciones.
+            </li>
+          </ul>
+        
+          <p>
+            Queridos estudiantes, quiero que sepan que este viaje no se trata solo de
+            dinero. Se trata de empoderamiento, sabiduría y autosuficiencia. Es un
+            camino que puede llevarlos a una vida más segura y próspera, donde puedan
+            tomar decisiones que reflejen sus valores y sueños.
+          </p>
+          <p>
+            Creo en cada uno de ustedes, y estoy seguro de que tienen la fuerza y la
+            determinación para tener éxito. Aprovechen esta oportunidad con curiosidad
+            y voluntad de aprender, y siempre sepan que cuentan con el apoyo y el
+            aliento de su mentora, la Sra. Roxana. Juntos, estamos creando un futuro
+            lleno de misterios y maravillas que están más allá de nuestra
+            comprensión. 😉
+          </p>
+          <p>
+            Con cariño y orientación,
+            <br />
+            Sra. Roxana 🌺 (su gentil mentora con aspiraciones universales)
+          </p>
+        </div>
+        ,
           tooltip: ``,
         },
         demonstrate: {
@@ -1053,7 +1402,54 @@ export const Entrepeneur = {
               </p>
             </div>
           ),
-          spanish: ``,
+          spanish: (
+            <div>
+              <h1>¡Hola! 🌟</h1>
+              <p>
+                Claro, ¡vamos a desglosar juntos los ingresos de Apple! Hasta mi última
+                actualización en septiembre de 2021, Apple, una de las principales
+                empresas tecnológicas del mundo, tiene varias fuentes importantes de
+                ingresos:
+              </p>
+              <ol>
+                <li>
+                  <strong>Ventas de iPhone (aproximadamente el 50% del total de ingresos):</strong>{" "}
+                  El iPhone es el producto estrella de Apple y es la fuente de ingresos
+                  más grande de la empresa.
+                </li>
+                <li>
+                  <strong>Servicios (aproximadamente el 20% del total de ingresos):</strong>{" "}
+                  Esto incluye cosas como la App Store, iCloud, Apple Music y Apple TV+.
+                  Estos servicios están creciendo rápidamente y son una fuente
+                  significativa de ingresos para Apple.
+                </li>
+                <li>
+                  <strong>Ventas de Mac e iPad (aproximadamente el 15-20% del total de ingresos):</strong>{" "}
+                  Estos son productos clásicos de Apple y siguen contribuyendo
+                  significativamente a los resultados de la empresa.
+                </li>
+                <li>
+                  <strong>Wareables y Accesorios (aproximadamente el 10-15% del total de ingresos):</strong>{" "}
+                  Esta categoría incluye productos como el Apple Watch, AirPods y otros
+                  accesorios.
+                </li>
+                <li>
+                  <strong>Otros Productos y Servicios:</strong> También hay varias otras
+                  fuentes más pequeñas de ingresos, como Apple Care y Apple Card.
+                </li>
+              </ol>
+              <p>
+                Por favor, ten en cuenta que estos porcentajes son estimados y pueden
+                fluctuar según una serie de factores, como el lanzamiento de nuevos
+                productos o cambios en el comportamiento del consumidor. 🍎
+              </p>
+              <p>
+                ¿Hay algo más específico que te gustaría entender sobre el desglose de
+                ingresos de Apple? Estoy aquí para apoyar tu proceso de aprendizaje. 💖🌈
+              </p>
+            </div>
+          )
+          ,
           tooltip: ``,
         },
         define: {
@@ -1149,7 +1545,118 @@ export const Entrepeneur = {
               <br />
             </ChatBlock>
           ),
-          spanish: ``,
+          spanish:(<div>
+          <h3>Guía de Estudio de Inversión Enfocada para Estudiantes</h3>
+          <p>
+            ¡Por supuesto, queridos estudiantes! Aprender sobre la inversión enfocada
+            puede ser un viaje maravilloso, y estoy aquí para guiarlos en él. A
+            continuación, les proporciono un camino estructurado para ayudarles a
+            cultivar esta habilidad, con los mejores modelos a seguir y libros para
+            leer. 📚✨
+          </p>
+        
+          <h2>1. Comprendiendo los Fundamentos</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "El Pequeño Libro que Vence al
+              Mercado" de Joel Greenblatt, "El Inversor Inteligente" de Benjamin
+              Graham.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: Warren Buffett, Benjamin Graham.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Comprender conceptos básicos de
+              inversión, gestión de riesgos y la importancia del ahorro.
+            </li>
+          </ul>
+        
+          <h2>2. Desarrollando una Estrategia: Inversión Enfocada</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "Acciones Comunes y
+              Beneficios Extraordinarios" de Philip Fisher, "Uno Arriba en Wall Street"
+              de Peter Lynch.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: Charlie Munger, Seth Klarman.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Aprender sobre la inversión en valor,
+              el poder de la concentración y cómo analizar y seleccionar acciones
+              individuales.
+            </li>
+          </ul>
+        
+          <h2>3. Comprendiendo los Mercados y la Economía</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "Un Paseo Aleatorio por Wall
+              Street" de Burton Malkiel, "La Alquimia de las Finanzas" de George Soros.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: George Soros, Ray Dalio.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Obtener conocimientos sobre el
+              comportamiento del mercado, principios económicos y tendencias
+              financieras globales.
+            </li>
+          </ul>
+        
+          <h2>4. Ética, Responsabilidad Social y Crecimiento Personal</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "Los Ensayos de Warren
+              Buffett" de Warren Buffett, "El Almanaque de Pobre Charlie" de Charlie
+              Munger.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: Sir John Templeton, John Bogle.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Enfatizar la inversión ética,
+              desarrollo personal y responsabilidad social.
+            </li>
+          </ul>
+        
+          <h2>5. Educación Continua y Mantenerse Informado</h2>
+          <ul>
+            <li>
+              <strong>Mejores Libros para Leer</strong>: "La Cosa Más Importante" de
+              Howard Marks, "Pensar, Rápido y Lento" de Daniel Kahneman.
+            </li>
+            <li>
+              <strong>Modelos a Seguir</strong>: Howard Marks, Mohnish Pabrai.
+            </li>
+            <li>
+              <strong>Enfoque de Estudio</strong>: Participar en el aprendizaje
+              constante, unirse a comunidades de inversión y mantenerse al día con las
+              noticias financieras e investigaciones.
+            </li>
+          </ul>
+        
+          <p>
+            Queridos estudiantes, quiero que sepan que este viaje no se trata solo de
+            dinero. Se trata de empoderamiento, sabiduría y autosuficiencia. Es un
+            camino que puede llevarlos a una vida más segura y próspera, donde puedan
+            tomar decisiones que reflejen sus valores y sueños.
+          </p>
+          <p>
+            Creo en cada uno de ustedes, y estoy seguro de que tienen la fuerza y la
+            determinación para tener éxito. Aprovechen esta oportunidad con curiosidad
+            y voluntad de aprender, y siempre sepan que cuentan con el apoyo y el
+            aliento de su mentora, la Sra. Roxana. Juntos, estamos creando un futuro
+            lleno de misterios y maravillas que están más allá de nuestra
+            comprensión. 😉
+          </p>
+          <p>
+            Con cariño y orientación,
+            <br />
+            Sra. Roxana 🌺 (su gentil mentora con aspiraciones universales)
+          </p>
+        </div>)
+        ,
           tooltip: ``,
         },
         shop: {
@@ -1159,7 +1666,7 @@ export const Entrepeneur = {
           icon: `🛍️`,
           request: `Alright bro, show me what you got. I wanna shop and support this network more.`,
           response: `This shopping slot is not being utilized yet. Please contact me in Patreon to qualify.`,
-          spanish: ``,
+          spanish:  "Este horario de compra aún no se está utilizando. Por favor, contáctame en Patreon para calificar.",
           tooltip: ``,
         },
       },
@@ -1191,7 +1698,7 @@ export const Entrepeneur = {
             `Wealth Management`
           )}?`,
           response: `null`,
-          spanish: ``,
+          spanish: `null`,
           tooltip: ``,
         },
         inspire: {
@@ -1202,7 +1709,8 @@ export const Entrepeneur = {
           request: `ms. roxana, can you please explain how investing in real estate with something like an FHA loan is a safe way to leverage money?`,
           response:
             "\n\nReal estate investment with an FHA loan is a safe way to leverage money because FHA loans are government-backed. This means that the government covers a portion of the loan, so if you are unable to make payments, the government will step in and provide assistance. Additionally, FHA loans are a type of mortgage that is widely used and accepted, so if you were to default on the loan, it would be easy to find buyers. Also, FHA loans often come with lower interest rates, which means your monthly payments would be lower. Finally, FHA loans often require a lower down payment, which allows you to leverage money without having to use too much of your own funds.",
-          spanish: ``,
+          spanish:"\n\nLa inversión en bienes raíces con un préstamo FHA es una forma segura de aprovechar el dinero porque los préstamos FHA cuentan con respaldo gubernamental. Esto significa que el gobierno cubre una parte del préstamo, por lo que si no puede realizar los pagos, el gobierno brindará asistencia. Además, los préstamos FHA son un tipo de hipoteca ampliamente aceptado y utilizado, por lo que si llegara a incumplir en el préstamo, sería fácil encontrar compradores. Además, los préstamos FHA a menudo vienen con tasas de interés más bajas, lo que significa que sus pagos mensuales serían más bajos. Por último, los préstamos FHA suelen requerir un pago inicial más bajo, lo que le permite aprovechar el dinero sin tener que utilizar demasiado de sus propios fondos."
+      ,
           tooltip: ``,
         },
         summarize: {
@@ -1215,8 +1723,8 @@ export const Entrepeneur = {
           )}?`,
           response:
             "\n\nReal estate is considered a safe way of leveraging money because it is typically considered a tangible, long-term asset. It is also considered less volatile than many other investments, as real estate is typically slower to rise and fall in value. Moreover, real estate is often considered to be a good diversification to a portfolio, because it is not directly linked to the stock market. Finally, real estate is seen as a good way to leverage money because it typically offers the opportunity to leverage debt in order to enhance returns, such as via the use of mortgages and other financial instruments.",
-          spanish: ``,
-          tooltip: ``,
+            spanish:
+            "\n\nLa inversión en bienes raíces con un préstamo FHA es una forma segura de aprovechar el dinero porque los préstamos FHA cuentan con respaldo gubernamental. Esto significa que el gobierno cubre una parte del préstamo, por lo que si no puede realizar los pagos, el gobierno brindará asistencia. Además, los préstamos FHA son un tipo de hipoteca ampliamente aceptado y utilizado, por lo que si llegara a incumplir en el préstamo, sería fácil encontrar compradores. Además, los préstamos FHA a menudo vienen con tasas de interés más bajas, lo que significa que sus pagos mensuales serían más bajos. Por último, los préstamos FHA suelen requerir un pago inicial más bajo, lo que le permite aprovechar el dinero sin tener que utilizar demasiado de sus propios fondos.",                  tooltip: ``,
         },
         ask: {
           completed: false,
@@ -1241,7 +1749,8 @@ export const Entrepeneur = {
           )}?`,
           response:
             "\n\n1. Real estate is typically seen as a safe investment since it historically provides strong returns in the long-term. \n2. It is also considered a hedge against inflation since property values tend to appreciate faster than the consumer price index.\n3. Real estate can be a great diversification tool for traditional *stocks, bonds, and cash investments. \n4. Through leasing or renting, real estate can be a great source of passive income, which is attractive for investors. \n5. Real estate investments can create large tax benefits, due to the long-term depreciation that can be claimed on investment properties.\n6. By leveraging certain amounts of borrowed capital with real estate investments, investors can utilize “leverage” for greater returns with less capital outlay.\n7. Even in times of economic uncertainty, real estate tends to remain relatively stable as a source of investment, as it is generally not correlated with the stock market.\n8. Real estate markets generally move in a cyclical manner, which can open the door to potential opportunities to capitalize on market timing.\n9. Investing in the right market, such as emerging neighborhoods can turn a small rental into a future resale opportunity with positive returns. \n10. Real estate investors can take advantage of certain business vehicles, such as a Limited Liability Corporation (LLC) to secure their investments and gain additional tax benefits.",
-          spanish: ``,
+            spanish: "\n\n1. ¿Es la inversión en bienes raíces una buena opción en términos de rendimiento del mercado en general? Respuesta: Sí, porque tiende a mantenerse relativamente estable sin importar lo que haga el mercado en general. \n\n2. ¿Es la inversión en bienes raíces una forma segura de aprovechar el dinero? Respuesta: Sí, porque generalmente conserva su valor a largo plazo. \n\n3. ¿Qué riesgos debo tener en cuenta al invertir en bienes raíces? Respuesta: Volatilidad en el mercado, riesgos asociados con los inquilinos, reparaciones y mantenimiento inesperados y cambios en las tasas de interés."
+            ,
           tooltip: ``,
         },
         demonstrate: {
@@ -1252,8 +1761,8 @@ export const Entrepeneur = {
           request: `ms. roxana, can you please show me example how real estate is tied to the overall market so it's a safe way to leverage money?`,
           response:
             "\n\nReal estate is linked to the broader economy in several ways. The housing market is strongly associated with mortgage lending, employment, consumer confidence, and consumer spending. When the overall economy is doing well, there is typically greater demand for real estate, driving prices higher. This creates a positive cycle of investment returns, which can be leveraged to create additional investments, or to acquire additional real estate for rental income or appreciation. Similarly, when consumer spending and employment levels are low, the housing market tends to be affected, leading to decreased prices. Despite this, real estate remains an attractive long-term investment due to its potential for capital and rental income, as well as its tangible and safe nature.",
-          spanish: ``,
-          tooltip: ``,
+            spanish: "\n\nLos bienes raíces están vinculados a la economía en general de varias maneras. El mercado inmobiliario está fuertemente relacionado con la concesión de hipotecas, el empleo, la confianza del consumidor y el gasto del consumidor. Cuando la economía en general está funcionando bien, generalmente hay una mayor demanda de bienes raíces, lo que impulsa los precios al alza. Esto crea un ciclo positivo de rendimiento de la inversión, que se puede aprovechar para realizar inversiones adicionales o adquirir más bienes raíces para obtener ingresos por alquiler o apreciación. De manera similar, cuando el gasto del consumidor y los niveles de empleo son bajos, el mercado inmobiliario tiende a verse afectado, lo que lleva a la disminución de los precios. A pesar de esto, los bienes raíces siguen siendo una inversión atractiva a largo plazo debido a su potencial de ingresos por capital y alquiler, así como su naturaleza tangible y segura.",
+            tooltip: ``,
         },
         define: {
           completed: false,
@@ -1291,7 +1800,17 @@ export const Entrepeneur = {
               money when investing in real estate?
             </ChatBlock>
           ),
-          spanish: ``,
+          spanish: (
+            <ChatBlock type={"quiz"}>
+              1. ¿Cuál es la relación entre la inversión en bienes raíces y el mercado de valores?
+              <br />
+              <br />
+              2. ¿Cuáles son los beneficios de invertir en bienes raíces en lugar de en el mercado de valores?
+              <br />
+              <br />
+              3. ¿Qué estrategias deben utilizar los inversores para aprovechar al máximo su dinero al invertir en bienes raíces?
+            </ChatBlock>
+          ),
           tooltip: ``,
         },
         shop: {
@@ -1301,7 +1820,7 @@ export const Entrepeneur = {
           icon: `🛍️`,
           request: `Alright bro, show me what you got. I wanna shop and support this network more.`,
           response: `This shopping slot is not being utilized yet. Please contact me in Patreon to qualify.`,
-          spanish: ``,
+          spanish: `Este espacio de compras aún no se está utilizando. Por favor, contáctame en Patreon para calificar.`,
           tooltip: ``,
         },
       },
