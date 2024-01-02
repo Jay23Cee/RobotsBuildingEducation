@@ -56,7 +56,20 @@ export const Engineer = {
               Ms. Roxana
             </div>
           ),
-          spanish: ``,
+          spanish: (<div>
+            Queridos Innovadores y Mentes Brillantes 🌟,
+            <br />
+            <br />
+            🌱 Bienvenidos a su viaje a través del dinámico mundo de la informática. Soy la Sra. Roxana, su guía en este camino de descubrimiento. La informática no es solo programación, es un universo donde la creatividad, la resolución de problemas y una multitud de disciplinas se encuentran.
+            <br />
+            <br />
+            Al explorar este campo, están ganando una nueva perspectiva, una herramienta que puede ayudarles a marcar la diferencia, sin importar dónde se encuentren sus pasiones. Mientras recorremos esta aventura juntos, recuerden que cada error es una oportunidad para crecer. Brindemos por descubrir el potencial, por abrazar la curiosidad y por adentrarnos en un mundo donde todo es posible 🚀.
+            <br />
+            <br />
+            Con cariño en la exploración ❤️,
+            <br />
+            Sra. Roxana
+          </div>),
           tooltip: ``,
         },
         patreon: {
@@ -68,7 +81,9 @@ export const Engineer = {
             `Learn Coding`
           )}?`,
           response: `null`,
-          spanish: ``,
+          spanish:`Sra. Roxana, ¿podría por favor generar material para introducirme al ${ultimateEffeciencyJutsu(
+            `Learn Coding`
+          )} para Aprender a Programar?`,
           tooltip: ``,
         },
         inspire: {
@@ -111,7 +126,16 @@ export const Engineer = {
               breakthrough might just be yours to discover! 🌟
             </div>
           ),
-          spanish: ``,
+          spanish: `<div>
+          Conozcan a Kismet, un robot desarrollado por Cynthia Breazeal en el Laboratorio de Medios del MIT a finales de la década de 1990 🤖. Kismet no era un robot cualquiera; estaba diseñado para participar en interacciones sociales con humanos. Lo fascinante de Kismet es que podía reconocer y responder a las emociones humanas a través de pistas faciales y vocales, imitando las interacciones de un bebé humano 👶. ¡Esto fue un hito extraordinario en la interacción humano-computadora y en la informática afectiva!
+          <br />
+          <br />
+          Avanzando hasta hoy, los algoritmos de aprendizaje automático juegan un papel enorme en la mejora de nuestra interacción con la tecnología, incluso más allá de lo que Kismet era capaz de hacer 🚀. Desde asistentes de voz como Siri y Alexa que entienden nuestros comandos hablados, hasta sistemas de recomendación como los de Netflix y YouTube que aprenden nuestras preferencias con el tiempo, el aprendizaje automático está cerrando la brecha entre humanos y computadoras 💻❤️.
+          <br />
+          <br />
+          La parte más inspiradora es que estas tecnologías no están construidas por magia, sino por personas como tú, que están dispuestas a aprender e innovar 🎓✨. El campo está completamente abierto, invitándote a hacer tus propias contribuciones. No importa cuán desafiantes puedan parecer los retos, recuerda: todo experto fue alguna vez un principiante. Al igual que Cynthia Breazeal, que combinó su comprensión del aprendizaje automático y la interacción humano-computadora para crear Kismet, tú también puedes tener un impacto significativo en el mundo de la tecnología 👏🌎. Así que, sigue aprendiendo, sigue creando y, ¿quién sabe? ¡El próximo gran avance podría ser tuyo para descubrir! 🌟
+        </div>
+        `,
           tooltip: ``,
         },
         summarize: {
@@ -244,7 +268,32 @@ export const Engineer = {
               your path of discovery in computer science! 🌈📘
             </div>
           ),
-          spanish: ``,
+          spanish: `<div>
+          <h2>
+            Profundicemos en la relación dinámica entre la informática, sus aplicaciones interdisciplinarias y la interacción humano-computadora (HCI).
+          </h2>
+          <br />
+          <br />
+          La informática no es un campo aislado; más bien, es una disciplina multifacética con el potencial de ramificarse e integrarse en varios otros dominios. Su poder radica en su flexibilidad y adaptabilidad, su capacidad para moldearse y mejorar e innovar en cualquier campo con el que se cruza. 🌐
+          <br />
+          <br />
+          Por ejemplo, en el área de la salud, la informática presta su poder para descifrar datos biológicos complejos, logrando avances en la medicina personalizada y el diagnóstico temprano de enfermedades. En estudios ambientales, contribuye a la modelización y simulación de datos, esenciales para comprender y mitigar los impactos del cambio climático. 🍃
+          <br />
+          <br />
+          De manera similar, el campo educativo está siendo redefinido por la infusión de informática, que ayuda a crear experiencias de aprendizaje dinámicas, interactivas y personalizadas. 📚 El mundo de las artes también es tocado, donde herramientas digitales, respaldadas por la informática, han introducido nuevas formas de expresión creativa. 🎨
+          <br />
+          <br />
+          Esta sinergia de la informática con varias disciplinas se enriquece aún más por la HCI. Como el puente entre los humanos y el complejo mundo de la tecnología, la HCI se enfoca en hacer la tecnología más amigable para el usuario, haciendo la interacción entre usuarios y computadoras más intuitiva, eficiente y placentera. 🤝
+          <br />
+          <br />
+          Desde dispositivos inteligentes para el hogar que entienden tus comandos hablados, hasta plataformas de aprendizaje adaptativo que se moldean a los estilos de aprendizaje individuales, la HCI ha hecho de la tecnología una parte integral de nuestras vidas, un compañero confiable que entiende y satisface nuestras necesidades. 🏠🎧
+          <br />
+          <br />
+          En última instancia, la historia de la informática no es solo sobre codificación y algoritmos. Se trata de cómo estas herramientas pueden ser utilizadas para crear impactos positivos en diversos campos, para mejorar vidas y para hacer del mundo un lugar mejor. Es un emocionante viaje de aprendizaje continuo, creatividad e innovación, con innumerables oportunidades para que hagas la diferencia. 🚀🌟
+          <br />
+          <br />
+        </div>
+        `,
           tooltip: ``,
         },
         guide: {
@@ -389,7 +438,111 @@ export const Engineer = {
               your goals. 😊👩‍💻🌟
             </div>
           ),
-          spanish: ``,
+          spanish: `<div>
+          <h3>
+            Desglosemos este proceso en cinco etapas, llevándote desde los conceptos básicos hasta la experiencia profesional en investigación interseccional, interacción humano-computadora (HCI) e informática.
+          </h3>
+          <br />
+          <br />
+          <br />
+          <br />
+          🌱Principiante: Introducción a las bases.
+          <br />
+          <br />
+          <ol>
+            <li>
+              Comienza con lo básico de la informática. Familiarízate con un lenguaje de programación como Python.
+            </li>
+            <li>
+              Lee libros introductorios sobre HCI, como "Designing the User Interface" de Ben Shneiderman y Catherine Plaisant. 
+            </li>
+            <li>
+              Aprende sobre la teoría de la interseccionalidad a partir de textos fundamentales como los artículos de Kimberlé Crenshaw.
+            </li>
+          </ol>
+          <br />
+          <br />
+          🌿Intermedio: Construyendo sobre las bases.
+          <br />
+          <br />
+          <ol>
+            <li>
+              Desarrolla tus habilidades en otro lenguaje de programación, como Java o JavaScript.
+            </li>
+            <li>
+              Comienza con algunos cursos básicos de diseño UX/UI para entender los principios de HCI.
+            </li>
+            <li>
+              Explora la interseccionalidad en profundidad, enfocándote en las categorías sociales superpuestas que contribuyen a la injusticia sistémica y la desigualdad social.
+            </li>
+          </ol> 
+          <br />
+          <br />
+          🌴Avanzado: Profundizando tus conocimientos y especialización.
+          <br />
+          <br />
+          <ol>
+            <li>
+              Familiarízate con conceptos avanzados de HCI como el diseño centrado en el usuario y la evaluación heurística.
+            </li>
+            <li>
+              Profundiza en la literatura de investigación interseccional. Observa estudios de caso que apliquen la interseccionalidad a la tecnología.
+            </li>
+            <li>
+              Aprende sobre estructuras de datos y algoritmos para mejorar tu base en informática.
+            </li>
+          </ol> 
+          <br />
+          <br />
+          🌳Profesional: Práctica y experiencia en el mundo real. <br />
+          <br />
+          <ol>
+            <li>
+              Comienza a trabajar en proyectos que incorporen las tres áreas. Tal vez un proyecto de software que requiera diseño centrado en el usuario y considere la interseccionalidad.
+            </li>
+            <li>Contribuye a proyectos de código abierto relacionados con HCI.</li>
+            <li>
+              Asiste a webinars y seminarios relacionados con la investigación tecnológica interseccional.
+            </li>
+          </ol> 
+          <br />
+          <br />
+          🎓Aprendizaje Continuo: Mantenerse actualizado y nunca dejar de aprender. <br />
+          <br />
+          <ol>
+            <li>
+              Participa en debates y discusiones en curso sobre la interseccionalidad en tecnología. Esto podría ser en foros en línea o conferencias académicas.
+            </li>
+            <li>
+              Lee regularmente artículos recientes de investigación en HCI para mantenerte al día con los últimos desarrollos.
+            </li>
+            <li>
+              Refina continuamente tus habilidades de programación con nuevos lenguajes y tecnologías.
+            </li>
+          </ol>
+          <br />
+          <br />
+          🔥 Liderando: Realizando Investigaciones Originales y Avanzando en el Campo <br />
+          <br />
+          <ol>
+            <li>
+              Identifica preguntas de investigación o desafíos en la interseccionalidad de la informática y tu dominio elegido.
+            </li>
+            <li>
+              Desarrolla y ejecuta proyectos de investigación, colaborando con expertos de diferentes disciplinas cuando sea necesario.
+            </li>
+            <li>
+              Publica tus hallazgos de investigación en revistas revisadas por pares, actas de conferencias y otros medios relevantes.
+            </li>
+            <li>
+              Comparte tu experiencia mediante la mentoría, enseñanza o consultoría en tu área de especialización.
+            </li>
+          </ol>
+          <br />
+          <br />
+          Recuerda, el crecimiento y el aprendizaje son procesos que ocurren paso a paso. Sigue adelante, mantente curioso y abraza el viaje. Cada experto fue alguna vez un principiante, y tienes la capacidad de alcanzar tus metas. 😊👩‍💻🌟
+        </div>
+        `,
           tooltip: ``,
         },
         demonstrate: {
