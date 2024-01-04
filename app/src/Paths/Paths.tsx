@@ -32,7 +32,7 @@ export const Paths = ({
   pathSelectionAnimationData,
 }): JSX.Element => {
   // Define the top paths
-  const topPaths = ["Engineer", "Creator", "Entrepeneur"];
+  const topPaths = ["Engineer", "Creator", "Entrepeneur"]; // DISPLAYING DCD
 
   // Generate the display elements for the top paths
   const displayTop = createDisplayTop(

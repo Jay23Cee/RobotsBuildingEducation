@@ -56,8 +56,7 @@ export const ProofOfWork = ({
         isEmotionalIntelligenceOpen={isEmotionalIntelligenceOpen}
         usersEmotionsCollectionReference={usersEmotionsCollectionReference}
         usersEmotionsFromDB={usersEmotionsFromDB}
-        updateUserEmotions={updateUserEmotions}
-      />
+        updateUserEmotions={updateUserEmotions} isDemo={undefined}      />
     </div>
   );
 };

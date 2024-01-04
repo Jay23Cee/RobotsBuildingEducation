@@ -41,15 +41,14 @@ app.post("/prompt", async (req, res) => {
     const prompt = req.body.prompt;
     const completion = await openai.chat.completions.create({
       model: "gpt-4",
-      messages: [{ role: "user", content: prompt }],
+      messages: [{role: "user", content: prompt}],
     });
 
     res.status(200).send({
       bot: completion.choices[0].message,
     });
   } catch (error) {
-
-    res.status(500).send({ error });
+    res.status(500).send({error});
   }
 });
 

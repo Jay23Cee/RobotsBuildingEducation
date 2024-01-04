@@ -1,8 +1,9 @@
+import { CSSProperties } from "react";
 import { auth } from "../database/firebaseResources";
 import { ProofOfWork } from "./ProofOfWork";
 
 // Define the style for the container
-const containerStyle = {
+const containerStyle: CSSProperties = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",

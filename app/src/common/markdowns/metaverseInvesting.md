@@ -62,7 +62,7 @@ The ability to inspire curiosity and confidence.
 The ability to deeply engage.
 The ability to produce imagination or creativity.
 
-Some of us may scoff about this, but there is a lot of truth to this sentiment that I believe many would agree with. For many early online child gamers, skills like typing quickly, bartering, multiplying, reading comprehension, or the desire to pursue arts originates from our time spent engaged by video games.
+Some of us may scoff about this, but there is a lot of truth to this sentiment that I believe many would agree with. For many early online child creators, skills like typing quickly, bartering, multiplying, reading comprehension, or the desire to pursue arts originates from our time spent engaged by video games.
 
 This is the goal and nature of heutagogic learning. This nature extends to adulthood, as many of us experienced this phenomenon while learning about advanced financial instruments for the sake of "learning the game" of stock market investing.
 

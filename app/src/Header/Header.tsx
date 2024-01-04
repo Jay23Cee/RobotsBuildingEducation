@@ -8,17 +8,17 @@ import { words } from "../common/words/words";
 export const Header = ({ languageMode, setLanguageMode }) => {
   // State for Language mode switch
   const [isSpanishMode, setIsSpanishMode] = useState(false);
-  const [languageModeLabel, setLanguageModeLabel] = useState("English");
+  const [languageModeLabel, setLanguageModeLabel] = useState("Español");
 
   // State for Color palette switch
-  const [isHolyGhostModeActive, setIsHolyGhostModeActive] = useState(false);
+  const [isHolyGhostModeActive, setIsHolyGhostModeActive] = useState(true);
   const [colorPaletteLabel, setColorPaletteLabel] = useState(
     languageMode.buttons["59"]
   );
 
   // Function to toggle language mode and update label
   const toggleLanguageMode = () => {
-    setIsSpanishMode(!isSpanishMode);
+    setIsSpanishMode(isSpanishMode);
   };
 
   // Function to toggle color palette mode and update label
@@ -68,7 +68,7 @@ export const Header = ({ languageMode, setLanguageMode }) => {
           >
             <Form.Switch>
               <Form.Check
-                disabled
+              
                 type="switch"
                 id="custom-switch-lang"
                 label={languageModeLabel}
@@ -76,7 +76,7 @@ export const Header = ({ languageMode, setLanguageMode }) => {
                 checked={isSpanishMode}
               />
               <Form.Check
-                disabled
+           
                 type="switch"
                 id="custom-switch-color"
                 label={colorPaletteLabel}

@@ -268,7 +268,7 @@ export const Engineer = {
               your path of discovery in computer science! 🌈📘
             </div>
           ),
-          spanish: `<div>
+          spanish: <div>
           <h2>
             Profundicemos en la relación dinámica entre la informática, sus aplicaciones interdisciplinarias y la interacción humano-computadora (HCI).
           </h2>
@@ -293,7 +293,7 @@ export const Engineer = {
           <br />
           <br />
         </div>
-        `,
+        ,
           tooltip: ``,
         },
         guide: {

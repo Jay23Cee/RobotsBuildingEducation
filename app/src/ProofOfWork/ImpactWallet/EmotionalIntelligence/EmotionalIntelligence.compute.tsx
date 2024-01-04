@@ -38,6 +38,6 @@ export const formatFriendlyDate = (timestamp) => {
     minute: "2-digit",
     hour12: true,
   };
-  const friendlyDate = new Intl.DateTimeFormat("en-US", options).format(date);
+  const friendlyDate = new Intl.DateTimeFormat("en-US", options as any).format(date);
   return friendlyDate;
 };

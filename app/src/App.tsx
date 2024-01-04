@@ -34,6 +34,7 @@ import { LectureHeader } from "./LectureHeader/LectureHeader";
 import { ChatGptWrapper } from "./ChatGPT/ChatGptWrapper";
 import { ProofOfWorkWrapper } from "./ProofOfWork/ProofOfWorkWrapper";
 import { words } from "./common/words/words";
+import { Web5 } from "@web5/api";
 
 logEvent(analytics, "page_view", {
   page_location: "https://learn-robotsbuildingeducation.firebaseapp.com/",
@@ -53,7 +54,7 @@ function App() {
   let { uiStateReference } = useUIStates();
 
   // handles language switching
-  let [languageMode, setLanguageMode] = useState(words["English"]);
+  let [languageMode, setLanguageMode] = useState(words["Español"]);
 
   /**
    *

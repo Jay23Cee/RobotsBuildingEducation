@@ -9,15 +9,15 @@ export const AuthComponent = (StyledFirebaseAuth as any).default
   ? (StyledFirebaseAuth as any).default
   : StyledFirebaseAuth;
 
-export const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
-  authDomain: "learn-robotsbuildingeducation.firebaseapp.com",
-  projectId: "learn-robotsbuildingeducation",
-  storageBucket: "learn-robotsbuildingeducation.appspot.com",
-  messagingSenderId: "1016937880040",
-  appId: "1:1016937880040:web:e9b478e361cafc4e61ec5d",
-  measurementId: "G-N0MK759NHN",
-};
+  export const firebaseConfig = {
+    apiKey: "AIzaSyDIDd05dX-Zl2HWu_aPqJ2Mj-s-o3tFKAg",
+    authDomain: "roboteducation-bb136.firebaseapp.com",
+    projectId: "roboteducation-bb136",
+    storageBucket: "roboteducation-bb136.appspot.com",
+    messagingSenderId: "506678935284",
+    appId: "1:506678935284:web:f3d915095674d136ed68a1",
+    measurementId: "G-372V8E43DV"
+  };
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);

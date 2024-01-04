@@ -17,7 +17,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/profile/:profileID",
-        element: <ImpactWallet />,
+        element: <ImpactWallet globalScholarshipCounter={undefined} databaseUserDocument={undefined} computePercentage={undefined} globalImpactCounter={undefined} isImpactWalletOpen={undefined} setIsImpactWalletOpen={undefined} handlePathSelection={undefined} isDemo={undefined} globalReserveObject={undefined} isEmotionalIntelligenceOpen={undefined} setIsEmotionalIntelligenceOpen={undefined} usersEmotionsCollectionReference={undefined} usersEmotionsFromDB={undefined} updateUserEmotions={undefined} />,
       },
     ],
   },
