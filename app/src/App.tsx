@@ -57,9 +57,13 @@ function App() {
   let { uiStateReference } = useUIStates();
 
   // handles language switching
+<<<<<<< HEAD
   let [languageMode, setLanguageMode] = useState(words["Español"]);
+=======
+  let [languageMode, setLanguageMode] = useState(words["English"]);
   const [showStars, setShowStars] = useState(false);
   const [showZap, setShowZap] = useState(false);
+>>>>>>> main
 
   /**
    *
@@ -200,7 +204,7 @@ function App() {
     const storedPasscode = localStorage.getItem("patreonPasscode");
 
     authStateReference.setIsZeroKnowledgeUser(
-      !isEmpty(window?.webln?.walletPubkey) ||
+      !isEmpty(window?.webln?.walletPubkey as any) ||
         localStorage.getItem("patreonPasscode") ===
           import.meta.env.VITE_PATREON_PASSCODE ||
         localStorage.getItem("patreonPasscode") ===
