@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import isEmpty from "lodash/isEmpty";
 
 import "./App.css";
 
@@ -12,7 +13,7 @@ import { Header } from "./Header/Header";
 import { Passcode } from "./Passcode/Passcode";
 import { auth, analytics } from "./database/firebaseResources";
 import { onAuthStateChanged } from "firebase/auth";
-import { getDocs } from "firebase/firestore";
+import { getDocs, updateDoc } from "firebase/firestore";
 
 import { logEvent } from "firebase/analytics";
 
@@ -21,6 +22,7 @@ import {
   useGlobalStates,
   useUIStates,
   useUserDocument,
+  useZap,
 } from "./App.hooks";
 import {
   checkActiveUserStates,
@@ -41,6 +43,7 @@ logEvent(analytics, "page_view", {
 });
 
 function App() {
+  let zap = useZap(1, "Robots Building Education Zap");
   // handles passcode, google sign in and registered user info
   const { authStateReference } = useAuthState();
 
@@ -55,6 +58,8 @@ function App() {
 
   // handles language switching
   let [languageMode, setLanguageMode] = useState(words["Español"]);
+  const [showStars, setShowStars] = useState(false);
+  const [showZap, setShowZap] = useState(false);
 
   /**
    *
@@ -129,9 +134,29 @@ function App() {
    * - sets success password flag to true
    * - logs event to anlytics
    */
-  const handleZeroKnowledgePassword = (event) => {
-    if (validPasscodes.includes(event.target.value)) {
+  const handleZeroKnowledgePassword = (
+    event,
+    logout = false,
+    bitcoin = false
+  ) => {
+    if (validPasscodes.includes(event?.target?.value)) {
       localStorage.setItem("patreonPasscode", event.target.value);
+      uiStateReference.setPatreonObject({});
+      authStateReference.setIsZeroKnowledgeUser(true);
+      logEvent(analytics, "login", { method: "zeroKnowledge" });
+    }
+
+    if (logout) {
+      uiStateReference.setPatreonObject({});
+      authStateReference.setIsZeroKnowledgeUser(false);
+      logEvent(analytics, "login", { method: "zeroKnowledge" });
+    }
+
+    if (bitcoin) {
+      localStorage.setItem(
+        "patreonPasscode",
+        import.meta.env.VITE_BITCOIN_PASSCODE
+      );
       uiStateReference.setPatreonObject({});
       authStateReference.setIsZeroKnowledgeUser(true);
       logEvent(analytics, "login", { method: "zeroKnowledge" });
@@ -166,16 +191,20 @@ function App() {
    */
 
   const connectDID = async () => {
-    const { web5, did: aliceDid } = await Web5.connect();
-
-    console.log("DID", aliceDid);
+    // const { web5, did: aliceDid } = await Web5.connect();
+    // console.log("DID", aliceDid);
   };
   useEffect(() => {
-    connectDID();
+    // connectDID();
 
     const storedPasscode = localStorage.getItem("patreonPasscode");
+
     authStateReference.setIsZeroKnowledgeUser(
-      validPasscodes.includes(storedPasscode)
+      !isEmpty(window?.webln?.walletPubkey) ||
+        localStorage.getItem("patreonPasscode") ===
+          import.meta.env.VITE_PATREON_PASSCODE ||
+        localStorage.getItem("patreonPasscode") ===
+          import.meta.env.VITE_BITCOIN_PASSCODE
     );
 
     onAuthStateChanged(auth, (user) => {
@@ -196,16 +225,100 @@ function App() {
     });
   }, []);
 
-  // console.log("language mode", languageMode);
-
   if (typeof authStateReference.isSignedIn == "string") {
     return <RoxanaLoadingAnimation />;
   }
 
+  const handleScheduler = async (scheduleEvent) => {
+    let locationOfHeader = uiStateReference.patreonObject.credential;
+
+    let data = {};
+
+    let profile = {
+      ...userStateReference.databaseUserDocument.profile,
+      [locationOfHeader]: true,
+    };
+
+    await updateDoc(userStateReference.userDocumentReference, {
+      profile,
+    });
+
+    userStateReference.setDatabaseUserDocument((prevDoc) => ({
+      ...prevDoc,
+      profile,
+    }));
+
+    setShowStars(true);
+
+    // Randomize animation properties for each star
+    document.querySelectorAll(".star").forEach((star) => {
+      const scale = Math.random() * 1.5; // Random scale
+      const x = Math.random() * 200 - 100; // Random x-position
+      const y = Math.random() * 200 - 100; // Random y-position
+      const duration = Math.random() * 1 + 0.5; // Random duration
+
+      star.style.opacity = 1;
+      star.style.transform = `scale(${scale}) translate(${x}px, ${y}px)`;
+      star.style.transition = `transform ${duration}s ease-in-out, opacity ${duration}s ease-in-out`;
+
+      // Reset the star after the animation
+      setTimeout(() => {
+        star.style.opacity = 0;
+        star.style.transform = "none";
+      }, duration * 1000);
+    });
+
+    // Reset the whole animation after some time
+    setTimeout(() => setShowStars(false), 3000);
+  };
+
+  const handleZap = async (zapEvent) => {
+    setShowZap(true);
+
+    // Randomize animation properties for each star
+    document.querySelectorAll(".zap").forEach((star) => {
+      const scale = Math.random() * 1.5; // Random scale
+      const x = Math.random() * 200 - 100; // Random x-position
+      const y = Math.random() * 200 - 100; // Random y-position
+      const duration = Math.random() * 1 + 0.5; // Random duration
+
+      star.style.opacity = 1;
+      star.style.transform = `scale(${scale}) translate(${x}px, ${y}px)`;
+      star.style.transition = `transform ${duration}s ease-in-out, opacity ${duration}s ease-in-out`;
+
+      // Reset the star after the animation
+      setTimeout(() => {
+        star.style.opacity = 0;
+        star.style.transform = "none";
+      }, duration * 1000);
+    });
+
+    // Reset the whole animation after some time
+    setTimeout(() => setShowZap(false), 3000);
+  };
+
   return (
-    <>
-      <div className="App" style={{ minHeight: "100vh" }}>
-        <Header languageMode={languageMode} setLanguageMode={setLanguageMode} />
+    <div
+      style={{
+        margin: "auto",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+    >
+      <div
+        className="App"
+        style={{
+          minHeight: "100dvh",
+          width: 640,
+          maxWidth: "100%",
+        }}
+      >
+        <Header
+          languageMode={languageMode}
+          setLanguageMode={setLanguageMode}
+          handleZeroKnowledgePassword={handleZeroKnowledgePassword}
+        />
 
         {checkSignInStates({ authStateReference }) ? <AuthDisplay /> : null}
 
@@ -237,6 +350,9 @@ function App() {
               uiStateReference={uiStateReference}
               userStateReference={userStateReference}
               globalStateReference={globalStateReference}
+              handleScheduler={handleScheduler}
+              handleZap={handleZap}
+              zap={zap}
             />
           </>
         ) : null}
@@ -250,9 +366,13 @@ function App() {
           handlePathSelection={handlePathSelection}
           updateUserEmotions={updateUserEmotions}
           uiStateReference={uiStateReference}
+          showStars={showStars}
+          showZap={showZap}
+          handleZeroKnowledgePassword={handleZeroKnowledgePassword}
+          zap={zap}
         />
       ) : null}
-    </>
+    </div>
   );
 }
 

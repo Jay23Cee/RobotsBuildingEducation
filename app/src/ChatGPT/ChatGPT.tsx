@@ -36,6 +36,11 @@ const ChatGPT = ({
   setGlobalImpactCounter,
   isDemo = false,
   moduleName,
+  handleScheduler,
+  handleZap,
+  userStateReference,
+  globalStateReference,
+  zap,
 }: Record<string, any>) => {
   const [shouldRenderIntro, setShouldRenderIntro] = useState(true);
   const [promptMessage, setPromptMessage] = useState("");
@@ -61,13 +66,13 @@ const ChatGPT = ({
 
   const handleSubmit = async (event, prompt = null, promptType = null) => {
     event.preventDefault();
+    let result = computeResult(promptType, patreonObject);
+
     setParentVisibility(true);
 
     setPromptMessage(prompt?.request);
     handlePromptSelection(promptType);
     await new Promise((resolve) => setTimeout(resolve, 750));
-
-    let result = computeResult(promptType, patreonObject);
 
     setIsResponseActive(true);
     setChatGptResponseList(result?.response);
@@ -148,12 +153,19 @@ const ChatGPT = ({
           patreonObject={patreonObject}
           parentVisibility={parentVisibility}
           setParentVisibility={setParentVisibility}
+          handleScheduler={handleScheduler}
+          userStateReference={userStateReference}
+          globalStateReference={globalStateReference}
+          handleZap={handleZap}
+          zap={zap}
         />
       ))}
       <Prompts
         loadingMessage={loadingMessage}
         patreonObject={patreonObject}
         handleSubmit={handleSubmit}
+        handleZap={handleZap}
+        zap={zap}
       />
     </div>
   );

@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { Button, Modal, ProgressBar } from "react-bootstrap";
+import isEmpty from "lodash/isEmpty";
+import { Button, Form, Modal, ProgressBar } from "react-bootstrap";
 import { getGlobalImpact } from "../../common/uiSchema";
 import sheilferBitcoin from "../../common/media/images/sheilferBitcoin.jpeg";
 import cashAppCard from "../../common/media/images/cashAppCard.jpeg";
+import roxanaChat from "../../common/media/images/roxanaChat.png";
 import { logEvent } from "firebase/analytics";
 import { analytics, database } from "../../database/firebaseResources";
 import { DiscordButton } from "../../common/ui/DiscordButton/DiscordButton";
@@ -11,7 +13,101 @@ import { Link, useParams } from "react-router-dom";
 import { EmotionalIntelligence } from "./EmotionalIntelligence/EmotionalIntelligence";
 import { japaneseThemePalette, textBlock } from "../../styles/lazyStyles";
 
+import { Scheduler } from "./Scheduler/Scheduler";
+import { decentralizedEducationTranscript } from "../../App.constants";
+import { Star, StarsContainer } from "./ImpactWallet.styles";
+import { Cofounder } from "./Cofounder/Cofounder";
+import {
+  Button as AlbyButton,
+  Modal as AlbyModal,
+  launchModal as albyLaunchModal,
+  closeModal as albyCloseModal,
+} from "@getalby/bitcoin-connect-react";
+import { BitcoinManager } from "./BitcoinManager/BitcoinManager";
+import { getAuth, signOut } from "firebase/auth";
+import { ChatFrame } from "./ChatFrame/ChatFrame";
+import { Portfolio } from "./Portfolio/Portfolio";
+
+const renderTranscriptAwards = (profileData) => {
+  if (isEmpty(profileData)) {
+    return (
+      <div>
+        No data is available. <br />
+        <br />
+      </div>
+    );
+  }
+
+  let awards = [];
+
+  let decentralizedEducationTranscriptCopy = decentralizedEducationTranscript;
+  for (const key in decentralizedEducationTranscript) {
+    awards.push(
+      <div
+        id={`${key}`}
+        label={`${key}`}
+        style={{
+          width: 125,
+          height: 125,
+          backgroundColor: profileData[key]
+            ? "rgba(13,41,179, 1)"
+            : "rgba(206, 206, 214,0.3)",
+          margin: 2,
+          border: profileData[key]
+            ? "5px solid rgba(0,0,255, 1)"
+            : "5px solid gray",
+          borderRadius: "20%",
+          padding: 5,
+        }}
+      >
+        {key}
+      </div>
+    );
+  }
+
+  return awards;
+};
+const renderCheckboxes = (profileData) => {
+  let checkboxes = [];
+
+  if (isEmpty(profileData)) {
+    return (
+      <div>
+        No data is available. <br />
+        <br />
+      </div>
+    );
+  }
+
+  for (const key in profileData) {
+    if (profileData[key]) {
+      checkboxes.push(
+        <Form.Check
+          type="checkbox"
+          id={`${key}`}
+          label={`${key}`}
+          checked={profileData[key]}
+          readOnly
+        />
+      );
+    }
+  }
+
+  if (checkboxes.length < 1) {
+    return (
+      <div>
+        Ms. Roxana doesn't see any proof of work yet. Have you not studied
+        yet?😠 <br />
+      </div>
+    );
+  }
+
+  return checkboxes;
+};
+
 export const ImpactWallet = ({
+  isChatFrameOpen,
+  setIsChatFrameOpen,
   globalScholarshipCounter,
   databaseUserDocument,
   computePercentage,
@@ -29,20 +125,23 @@ export const ImpactWallet = ({
   usersEmotionsCollectionReference,
   usersEmotionsFromDB,
   updateUserEmotions,
+  setIsSchedulerOpen,
+  isSchedulerOpen,
+
+  showStars,
+  showZap,
+  isCofounderOpen,
+  setIsCofounderOpen,
+  handleZeroKnowledgePassword,
+  userStateReference,
+  globalStateReference,
+  zap,
 }) => {
   let [databaseUserDocumentCopy, setDatabaseUserDocumentCopy] = useState({});
 
   let params = useParams();
 
-  let [borderStateForBitcoinButton, setBorderStateForBitcoinButton] = useState({
-    border: "1px solid blue",
-  });
-  let [borderStateForLightningButton, setBorderStateForLightningButton] =
-    useState({ border: "1px solid blue" });
-
   useEffect(() => {
-    // mountWallet();
-
     if (params?.profileID && params?.profileID !== userAuthObject?.uid) {
       const docRef = doc(database, "users", params?.profileID);
       getDoc(docRef).then((res) => {
@@ -56,45 +155,61 @@ export const ImpactWallet = ({
     } else {
       setDatabaseUserDocumentCopy(databaseUserDocument);
     }
-  }, []);
+  }, [databaseUserDocument]);
 
-  let copyToClipboard = (network) => {
-    // Get the text field
-    let addresses = {
-      bitcoin: "39JpVJoeXkCoHN3qvCytc7RyX5AYNYiWfG",
-      lightning:
-        "lnbc1pjq4u64dqdgdshx6pqg9c8qpp5xwhu3aa37yc3fyxe4wneytm85fuja3pxjkr9ptf505pkzw9pgt5qsp5tlf279qfpnc9zml558mqdw2t4dz6duf0gunnul3ulzm9wdu2lhfq9qrsgqcqpcxqy8ayqrzjqv06k0m23t593pngl0jt7n9wznp64fqngvctz7vts8nq4tukvtljqze59vqqnqcqquqqqqqqqqqqqqqq9grzjqtsjy9p55gdceevp36fvdmrkxqvzfhy8ak2tgc5zgtjtra9xlaz97zya75qq86gqqvqqqqqqqqqqqqqq9gf02ywdfg64sknwdg63m79u25jyl586g9zqgxzrhzhc034jfas3akxwmctky7rs2tgdx894l59g39lxu4436rsv5f9r8nrlf7tag8l5qqsfu06z",
-    };
+  let impactResult = databaseUserDocumentCopy?.impact;
 
-    // Copy the text inside the text field
-    navigator.clipboard.writeText(addresses[network]);
-  };
-
-  let animateBorderLoading = async (button) => {
-    if (button === "bitcoin") {
-      setBorderStateForBitcoinButton({ border: "1px solid gold" });
-    } else {
-      setBorderStateForLightningButton({ border: "1px solid gold" });
-    }
-
-    const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-    await delay(750);
-
-    if (button === "bitcoin") {
-      setBorderStateForBitcoinButton({ border: "1px solid blue" });
-    } else {
-      setBorderStateForLightningButton({ border: "1px solid blue" });
-    }
-  };
-
-  let impactResult =
-    databaseUserDocumentCopy?.impact ||
-    databaseUserDocument?.impact ||
-    15200 / getGlobalImpact();
+  /**
+   *               {/* <iframe
+                src="https://chat.openai.com/g/g-09h5uQiFC-ms-roxana"
+                title="W3Schools Free Online Web Tutorials"
+              ></iframe> 
+  */
 
   return (
     <>
       <div>
+        {!isDemo ? (
+          <Button
+            style={{ textShadow: "2px 2px 12px black" }}
+            onClick={() => {
+              logEvent(analytics, "select_content", {
+                content_type: "button",
+                item_id: "Cofounder",
+              });
+              setIsCofounderOpen(true);
+            }}
+            variant="secondary"
+          >
+            🌀
+          </Button>
+        ) : null}
+        &nbsp; &nbsp;
+        {!isDemo ? (
+          <Button
+            style={{ textShadow: "2px 2px 12px black" }}
+            onClick={() => {
+              logEvent(analytics, "select_content", {
+                content_type: "button",
+                item_id: "Scheduler",
+              });
+              // setIsChatFrameOpen(true);
+            }}
+            variant="secondary"
+          >
+            <a
+              href="https://chat.openai.com/g/g-09h5uQiFC-ms-roxana"
+              target="_blank"
+            >
+              <img
+                src={roxanaChat}
+                width="16"
+                style={{ borderRadius: "50%", boxShadow: "2px 2px 12px black" }}
+              />
+            </a>
+          </Button>
+        ) : null}
+        &nbsp; &nbsp;
         {!isDemo ? (
           <Button
             style={{ textShadow: "2px 2px 12px black" }}
@@ -124,6 +239,20 @@ export const ImpactWallet = ({
             variant="secondary"
           >
             🏦
+            <StarsContainer className={showStars ? "animate" : ""}>
+              {[...Array(10)].map((_, index) => (
+                <Star className="star" key={index}>
+                  ✨
+                </Star>
+              ))}
+            </StarsContainer>
+            <StarsContainer className={showZap ? "animate" : ""}>
+              {[...Array(10)].map((_, index) => (
+                <Star className="zap" key={index}>
+                  ⚡
+                </Star>
+              ))}
+            </StarsContainer>
           </Button>
         </Link>
         &nbsp; &nbsp; &nbsp;{" "}
@@ -142,6 +271,7 @@ export const ImpactWallet = ({
         </div>
       </div>
 
+      {/* need to conditionall render this */}
       <Modal centered show={isImpactWalletOpen} fullscreen>
         <Modal.Header
           closeButton
@@ -164,8 +294,6 @@ export const ImpactWallet = ({
             backgroundAttachment: "fixed",
           }}
         >
-          <DiscordButton />
-
           <div
             style={{
               backgroundColor: "rgba(0,0,0,0.8)",
@@ -174,6 +302,108 @@ export const ImpactWallet = ({
               width: "100%",
             }}
           >
+            <div>
+              {/* <AlbyButton onConnect={() => alert("Connected!")}></AlbyButton> */}
+              <BitcoinManager
+                handleZeroKnowledgePassword={handleZeroKnowledgePassword}
+              />
+
+              <div>
+                <h1>The Reserve</h1>
+                <h3>invested {globalReserveObject?.invested || "N/A"}</h3>
+
+                <h6>last updated {globalReserveObject?.last_updated}</h6>
+                <div></div>
+                <Portfolio />
+              </div>
+            </div>
+            <br />
+            <h4>Your Decentralized Transcript</h4>
+            <div
+              style={{
+                borderRadius: "12px",
+                width: "fit-content",
+                padding: 12,
+                color: "black",
+                backgroundColor: "rgba(252, 233, 177, 1)",
+                // textShadow: "0px 0px 20px black",
+              }}
+            >
+              <Form>
+                {renderCheckboxes(
+                  userStateReference.databaseUserDocument.profile
+                )}
+              </Form>
+            </div>
+            <br />
+            <h4>Transcript Awards</h4>
+
+            <div
+              style={{
+                width: "100%",
+                display: "flex",
+                flexWrap: "wrap",
+              }}
+            >
+              {renderTranscriptAwards(
+                userStateReference.databaseUserDocument.profile
+              )}
+            </div>
+            <br />
+
+            <h4>Scholarships Created: {globalScholarshipCounter}</h4>
+            <p>
+              Work Done By You
+              <br />
+              {impactResult}
+              {/* / {getGlobalImpact()} */}
+              <ProgressBar
+                style={{
+                  backgroundColor: "black",
+                  borderRadius: "0px",
+                  margin: 12,
+                  borderRadius: 5,
+                }}
+                // variant="success"
+                now={Math.floor(computePercentage * 100)}
+              />
+              <br />
+              Work Done By All
+              <br />
+              <b>{globalImpactCounter}</b>
+              <br />
+              <br />
+              You are &nbsp;
+              <b>
+                {(
+                  ((databaseUserDocumentCopy?.impact ||
+                    databaseUserDocument.impact ||
+                    0) /
+                    globalImpactCounter) *
+                  100
+                ).toFixed(2) || "0"}
+                %
+              </b>
+              &nbsp;of the work 😳
+              <ProgressBar
+                style={{
+                  backgroundColor: "black",
+                  borderRadius: "0px",
+                  margin: 12,
+                  borderRadius: 5,
+                }}
+                variant="warning"
+                now={Math.floor(
+                  ((databaseUserDocumentCopy?.impact ||
+                    databaseUserDocument.impact ||
+                    0) /
+                    globalImpactCounter) *
+                    100
+                )}
+              />
+              <hr />
+            </p>
+            <br />
             <h4> The Proof of Work System</h4>
             <p
               style={{
@@ -199,119 +429,6 @@ export const ImpactWallet = ({
               and interfaces should allow us to rewire education services,
               finance and content for a new era of software.
             </p>
-            <h4>Scholarships Created: {globalScholarshipCounter}</h4>
-            <p>
-              Work Done By You
-              <br />
-              {impactResult}
-              <ProgressBar
-                style={{
-                  backgroundColor: "black",
-                  borderRadius: "0px",
-                  margin: 12,
-                  borderRadius: 5,
-                }}
-                // variant="success"
-                now={Math.floor(computePercentage * 100)}
-              />
-              <br />
-              Work Done By All
-              <br />
-              <b>{globalImpactCounter}</b>
-              <br />
-              <br />
-              You are &nbsp;
-              <b>
-                {(
-                  ((databaseUserDocumentCopy?.impact ||
-                    databaseUserDocument.impact ||
-                    0) /
-                    globalImpactCounter) *
-                  100
-                ).toFixed(2)}
-                %
-              </b>
-              &nbsp;of the work 😳
-              <ProgressBar
-                style={{
-                  backgroundColor: "black",
-                  borderRadius: "0px",
-                  margin: 12,
-                  borderRadius: 5,
-                }}
-                variant="warning"
-                now={Math.floor(
-                  ((databaseUserDocumentCopy?.impact ||
-                    databaseUserDocument.impact ||
-                    0) /
-                    globalImpactCounter) *
-                    100
-                )}
-              />
-              <hr />
-            </p>
-
-            <div>
-              <h1>The Reserve</h1>
-              <h3>invested {globalReserveObject?.invested || "N/A"}</h3>
-
-              <h6>last updated {globalReserveObject?.last_updated}</h6>
-              <div></div>
-              <img src={sheilferBitcoin} width={300} height={350} />
-
-              <br />
-              <br />
-              <br />
-              <b>To track transaction or send without QR</b>
-              <br />
-              <br />
-              <div
-                id="bitcoin"
-                onClick={() => {
-                  logEvent(analytics, "select_promotion", {
-                    creative_name: `Bitcoin Address Button`,
-                    creative_slot: `Bitcoin Address Slot`,
-                    promotion_id: `Robots Building Education Bitcoin AddressSlot`,
-                    promotion_name: "advertising_launch",
-                  });
-                  copyToClipboard("bitcoin");
-                }}
-                style={{ transition: "0.3s all ease-in-out" }}
-              >
-                <Button
-                  variant="dark"
-                  onClick={() => animateBorderLoading("bitcoin")}
-                  style={borderStateForBitcoinButton}
-                >
-                  ₿ Copy Bitcoin Address
-                </Button>
-              </div>
-              <br />
-              <div
-                id="lightning"
-                onClick={() => {
-                  logEvent(analytics, "select_promotion", {
-                    creative_name: `Lightning Address Button`,
-                    creative_slot: `Lightning Address Slot`,
-                    promotion_id: `Robots Building Education Lightning Address Slot`,
-                    promotion_name: "advertising_launch",
-                  });
-
-                  copyToClipboard("lightning");
-                }}
-                style={{ transition: "0.3s all ease-in-out" }}
-              >
-                <Button
-                  variant="dark"
-                  style={borderStateForLightningButton}
-                  onClick={() => animateBorderLoading("lightning")}
-                >
-                  ⚡ Copy Lightning Address
-                </Button>
-              </div>
-
-              <br />
-            </div>
 
             <br />
           </div>
@@ -331,7 +448,32 @@ export const ImpactWallet = ({
         usersEmotionsCollectionReference={usersEmotionsCollectionReference}
         usersEmotionsFromDB={usersEmotionsFromDB}
         updateUserEmotions={updateUserEmotions}
+        userStateReference={userStateReference}
+        globalStateReference={globalStateReference}
+        zap={zap}
       />
+
+      <Scheduler
+        isSchedulerOpen={isSchedulerOpen}
+        setIsSchedulerOpen={setIsSchedulerOpen}
+        userStateReference={userStateReference}
+        zap={zap}
+      />
+
+      <Cofounder
+        isCofounderOpen={isCofounderOpen}
+        setIsCofounderOpen={setIsCofounderOpen}
+        userStateReference={userStateReference}
+        globalStateReference={globalStateReference}
+        zap={zap}
+      />
+
+      {/* <ChatFrame
+        setIsChatFrameOpen={setIsChatFrameOpen}
+        isChatFrameOpen={isChatFrameOpen}
+        userStateReference={userStateReference}
+        globalStateReference={globalStateReference}
+      /> */}
     </>
   );
 };

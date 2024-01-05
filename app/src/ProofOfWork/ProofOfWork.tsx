@@ -14,10 +14,23 @@ export const ProofOfWork = ({
   usersEmotionsFromDB,
   updateUserEmotions,
   isDemo,
+  //some redundancy since I haven't refactored these values yet.
+  userStateReference,
+  globalStateReference,
+  showStars,
+  showZap,
+  handleZeroKnowledgePassword,
+  zap,
 }) => {
   const [isImpactWalletOpen, setIsImpactWalletOpen] = useState(false);
   const [isEmotionalIntelligenceOpen, setIsEmotionalIntelligenceOpen] =
     useState(false);
+
+  const [isSchedulerOpen, setIsSchedulerOpen] = useState(false);
+
+  const [isCofounderOpen, setIsCofounderOpen] = useState(false);
+
+  const [isChatFrameOpen, setIsChatFrameOpen] = useState(false);
 
   if (isDemo) {
     return null;
@@ -56,7 +69,19 @@ export const ProofOfWork = ({
         isEmotionalIntelligenceOpen={isEmotionalIntelligenceOpen}
         usersEmotionsCollectionReference={usersEmotionsCollectionReference}
         usersEmotionsFromDB={usersEmotionsFromDB}
-        updateUserEmotions={updateUserEmotions} isDemo={undefined}      />
+        updateUserEmotions={updateUserEmotions} isDemo={undefined}        setIsSchedulerOpen={setIsSchedulerOpen}
+        isSchedulerOpen={isSchedulerOpen}
+        userStateReference={userStateReference}
+        showStars={showStars}
+        showZap={showZap}
+        isCofounderOpen={isCofounderOpen}
+        setIsCofounderOpen={setIsCofounderOpen}
+        handleZeroKnowledgePassword={handleZeroKnowledgePassword}
+        globalStateReference={globalStateReference}
+        isChatFrameOpen={isChatFrameOpen}
+        setIsChatFrameOpen={setIsChatFrameOpen}
+        zap={zap}
+      />
     </div>
   );
 };

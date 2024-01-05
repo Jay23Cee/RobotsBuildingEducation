@@ -5,20 +5,68 @@ import ReactJson from "react-json-view";
 import { logEvent } from "firebase/analytics";
 import { analytics } from "../../database/firebaseResources";
 import { StyledPromptButton } from "../../styles/lazyStyles";
+import { computeTotalImpactFromPrompt } from "../ChatGPT.compute";
+import { useZap } from "../../App.hooks";
 
 // Reusable Button Component
-const PromptButton = ({ icon, action, type, loading, onClick }) => (
-  <StyledPromptButton
-    tabindex="0"
-    borderHighlight={"#48484a"}
-    style={{ display: loading ? "none" : "flex" }}
-    onClick={onClick}
-  >
-    <a style={{ color: "white" }}>
-      {icon} &nbsp;{action || type}
-    </a>
-  </StyledPromptButton>
-);
+const PromptButton = ({
+  patreonObject,
+  icon,
+  action,
+  type,
+  loading,
+  onClick,
+  prompt,
+  handleZap,
+  zap,
+}) => {
+  if (
+    localStorage.getItem("patreonPasscode") ===
+    import.meta.env.VITE_BITCOIN_PASSCODE
+  ) {
+    let satoshis = computeTotalImpactFromPrompt(patreonObject, type);
+    // let data = useZap(satoshis);
+    // let zap = useZap(1);
+    return (
+      <StyledPromptButton
+        tabindex="0"
+        borderHighlight={"#48484a"}
+        style={{ display: loading ? "none" : "flex" }}
+        onClick={(e) => {
+          zap()
+            .then((response) => {
+              console.log("response from zap", response);
+              onClick(e);
+              handleZap("lecture");
+            })
+            .catch((error) => {
+              console.log("error", error);
+              console.log("{error}", { error });
+            });
+        }}
+      >
+        <a style={{ color: "white" }}>
+          {icon} &nbsp;{action || type}
+        </a>
+      </StyledPromptButton>
+    );
+  }
+
+  return (
+    <StyledPromptButton
+      tabindex="0"
+      borderHighlight={"#48484a"}
+      style={{ display: loading ? "none" : "flex" }}
+      onClick={(e) => {
+        onClick(e, prompt, type);
+      }}
+    >
+      <a style={{ color: "white" }}>
+        {icon} &nbsp;{action || type}
+      </a>
+    </StyledPromptButton>
+  );
+};
 
 // Modal Content as a separate component
 const ModalContent = ({ patreonObject }) => (
@@ -37,7 +85,13 @@ const ModalContent = ({ patreonObject }) => (
   </>
 );
 
-export const Prompts = ({ loadingMessage, patreonObject, handleSubmit }) => {
+export const Prompts = ({
+  loadingMessage,
+  patreonObject,
+  handleSubmit,
+  handleZap,
+  zap,
+}) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   if (isEmpty(patreonObject)) return null;
@@ -57,12 +111,16 @@ export const Prompts = ({ loadingMessage, patreonObject, handleSubmit }) => {
         if (!prompt) return null;
         return (
           <PromptButton
+            patreonObject={patreonObject}
             key={type}
             icon={prompt?.icon}
             action={prompt?.action}
             type={type}
             loading={!!loadingMessage}
+            prompt={prompt}
             onClick={(e) => !loadingMessage && handleSubmit(e, prompt, type)}
+            handleZap={handleZap}
+            zap={zap}
           />
         );
       })}
