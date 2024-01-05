@@ -57,8 +57,9 @@ function App() {
   let { uiStateReference } = useUIStates();
 
   // handles language switching
-  let [languageMode, setLanguageMode] = useState(words["Español"]);
-
+  let [languageMode, setLanguageMode] = useState(words["English"]);
+  const [showStars, setShowStars] = useState(false);
+  const [showZap, setShowZap] = useState(false);
   /**
    *
    * @param event click event
