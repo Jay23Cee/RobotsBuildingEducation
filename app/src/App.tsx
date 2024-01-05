@@ -57,13 +57,7 @@ function App() {
   let { uiStateReference } = useUIStates();
 
   // handles language switching
-<<<<<<< HEAD
   let [languageMode, setLanguageMode] = useState(words["Español"]);
-=======
-  let [languageMode, setLanguageMode] = useState(words["English"]);
-  const [showStars, setShowStars] = useState(false);
-  const [showZap, setShowZap] = useState(false);
->>>>>>> main
 
   /**
    *
@@ -185,7 +179,7 @@ function App() {
         } else {
         }
       });
-      emotionSet = sortEmotionsByDate(emotionSet);
+      emotionSet = sortEmotionsByDate(emotionSet) as any;
       userStateReference.setUsersEmotionsFromDB(emotionSet);
     });
   };
